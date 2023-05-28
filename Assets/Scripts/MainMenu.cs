@@ -62,7 +62,7 @@ public class MainMenu : MonoBehaviour
             }
         }
 
-        energyText.text = $"Play ({energy})";
+        energyText.text = $"{energy}";
 
     }
 

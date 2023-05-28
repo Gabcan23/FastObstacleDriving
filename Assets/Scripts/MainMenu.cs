@@ -18,7 +18,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private int maxEnergy;
     [SerializeField] private int energyRechargeDuration;
 
-    private int energy;
+    public static int energy;
 
     private const string EnergyKey = "Energy";
     private const string EnergyReadyKey = "EnergyReady";

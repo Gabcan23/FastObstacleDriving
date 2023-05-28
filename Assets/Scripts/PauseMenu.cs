@@ -23,7 +23,8 @@ public class PauseMenu : MonoBehaviour
 
     }
 
-    public void MainMenu(){
+    public void mainMenu(){
+        MainMenu.energy++;
         Time.timeScale = 1f;
         SceneManager.LoadScene(0);
     }

@@ -5,10 +5,11 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class MainMenu : MonoBehaviour
 {
-
+    public AudioMixer audioMixer;
     [SerializeField] private TMP_Text highScoreText;
     [SerializeField] private TMP_Text energyText;
     [SerializeField] private Button playButton;
@@ -71,8 +72,18 @@ public class MainMenu : MonoBehaviour
         playButton.interactable = true;
         energy = maxEnergy;
         PlayerPrefs.SetInt(EnergyKey, energy);
-        energyText.text = $"Play ({energy})";
+        energyText.text = $"{energy}";
 
+    }
+
+    public void SetMainVolume(float volume)
+    {
+        audioMixer.SetFloat("MainVolume",volume);
+    }
+
+    public void SetMusicVolume(float volume)
+    {
+        audioMixer.SetFloat("Music Volume",volume);
     }
 
     public void Play()

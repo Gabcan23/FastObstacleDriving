@@ -45,7 +45,6 @@ public class Car : MonoBehaviour
     }
 
     public void BackToMenu(){
-        if(MainMenu.energy==0){MainMenu.energy=0;}
         Time.timeScale = 1f;
         SceneManager.LoadScene(0);
     }

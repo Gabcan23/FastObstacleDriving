@@ -53,6 +53,7 @@ public class MainMenu : MonoBehaviour
             if(DateTime.Now > energyReady)
             {
                 energy = maxEnergy;
+                
                 PlayerPrefs.SetInt(EnergyKey, energy);
             }
             else
@@ -71,6 +72,7 @@ public class MainMenu : MonoBehaviour
     {
         playButton.interactable = true;
         energy = maxEnergy;
+        
         PlayerPrefs.SetInt(EnergyKey, energy);
         energyText.text = $"{energy}";
 
@@ -91,6 +93,7 @@ public class MainMenu : MonoBehaviour
         if(energy < 1) { return; }
 
         energy--;
+        
 
         PlayerPrefs.SetInt(EnergyKey, energy);
 

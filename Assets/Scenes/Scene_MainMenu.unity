@@ -238,6 +238,8 @@ MonoBehaviour:
   iosNotificationHandler: {fileID: 30511644}
   maxEnergy: 5
   energyRechargeDuration: 1
+  energyAmount: {fileID: 11400000, guid: 6f3dcb74502031a499b44266c8f1112d, type: 2}
+  energy: 0
 --- !u!4 &30511642
 Transform:
   m_ObjectHideFlags: 0

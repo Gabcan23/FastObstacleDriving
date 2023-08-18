@@ -238,8 +238,6 @@ MonoBehaviour:
   iosNotificationHandler: {fileID: 30511644}
   maxEnergy: 5
   energyRechargeDuration: 1
-  energyAmount: {fileID: 11400000, guid: 6f3dcb74502031a499b44266c8f1112d, type: 2}
-  energy: 0
 --- !u!4 &30511642
 Transform:
   m_ObjectHideFlags: 0
@@ -2147,6 +2145,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1661859483}
   m_CullTransparentMesh: 1
+--- !u!1 &1684728104
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1684728106}
+  - component: {fileID: 1684728105}
+  m_Layer: 0
+  m_Name: AdsManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1684728105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684728104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f1ec520ae704374992fba96b0fdb253, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _androidGameId: 5386548
+  _iOSGameId: 5386549
+  _testMode: 1
+  rewardedAdsButton: {fileID: 1814642926}
+--- !u!4 &1684728106
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684728104}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 559.93085, y: 467.51355, z: -23.293701}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1712873507
 GameObject:
   m_ObjectHideFlags: 0
@@ -2407,6 +2453,7 @@ GameObject:
   - component: {fileID: 1814642925}
   - component: {fileID: 1814642924}
   - component: {fileID: 1814642923}
+  - component: {fileID: 1814642926}
   m_Layer: 0
   m_Name: FuelButton
   m_TagString: Untagged
@@ -2518,6 +2565,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1814642921}
   m_CullTransparentMesh: 1
+--- !u!114 &1814642926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1814642921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6fc359414911dd44bd4bdd4974110b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showAdButton: {fileID: 1814642923}
+  _androidAdUnitId: Rewarded_Android
+  _iOSAdUnitId: Rewarded_iOS
 --- !u!1 &1884398553
 GameObject:
   m_ObjectHideFlags: 0

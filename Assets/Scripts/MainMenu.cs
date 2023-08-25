@@ -68,7 +68,7 @@ public class MainMenu : MonoBehaviour
 
     }
 
-    private void EnergyRecharged()
+    public void EnergyRecharged()
     {
         playButton.interactable = true;
         energy = maxEnergy;

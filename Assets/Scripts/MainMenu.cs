@@ -78,6 +78,16 @@ public class MainMenu : MonoBehaviour
 
     }
 
+    public void EnergyReward()
+    {
+        playButton.interactable = true;
+        energy = energy+2;
+        
+        PlayerPrefs.SetInt(EnergyKey, energy);
+        energyText.text = $"{energy}";
+
+    }
+
     public void SetMainVolume(float volume)
     {
         audioMixer.SetFloat("MainVolume",volume);

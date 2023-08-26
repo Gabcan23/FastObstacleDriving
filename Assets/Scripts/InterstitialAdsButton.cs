@@ -30,12 +30,10 @@ public class InterstitialAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnit
     public void ShowAd()
     {
         if(showAD==3){
+            showAD=0;
             // Note that if the ad content wasn't previously loaded, this method will fail
             Debug.Log("Showing Ad: " + _adUnitId);
             Advertisement.Show(_adUnitId, this);
-        
-        }else if(showAD>3){
-            showAD=0;
         }else{
             showAD++;
         }

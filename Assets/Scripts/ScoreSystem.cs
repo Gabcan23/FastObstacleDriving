@@ -10,13 +10,30 @@ public class ScoreSystem : MonoBehaviour
 
     public const string HighScoreKey = "HighScore";
     private float score;
+    private bool shouldCount = true;
 
     void Update()
     {
+        if(!shouldCount){return;}
+
         score += Time.deltaTime * scoreMultiplier;
 
         scoreText.text = Mathf.FloorToInt(score).ToString();
         
+    }
+
+    public void StartTimer(){
+        shouldCount = true;
+    }
+
+    public int EndTimer(){
+
+        shouldCount = false;
+
+        scoreText.text = string.Empty;
+
+        return Mathf.FloorToInt(score);
+
     }
 
     private void OnDestroy()

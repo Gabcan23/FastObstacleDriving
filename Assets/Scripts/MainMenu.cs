@@ -81,7 +81,7 @@ public class MainMenu : MonoBehaviour
     public void EnergyReward()
     {
         playButton.interactable = true;
-        energy = energy+2;
+        energy = maxEnergy;
         
         PlayerPrefs.SetInt(EnergyKey, energy);
         energyText.text = $"{energy}";

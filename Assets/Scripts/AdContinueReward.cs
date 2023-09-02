@@ -2,14 +2,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Advertisements;
  
-public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowListener
+public class AdContinueReward : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowListener
 {
     [SerializeField] Button _showAdButton;
     [SerializeField] string _androidAdUnitId = "Rewarded_Android";
     [SerializeField] string _iOSAdUnitId = "Rewarded_iOS";
     string _adUnitId = null; // This will remain null for unsupported platforms
-
-    [SerializeField] MainMenu mainMenu;
+    [SerializeField] GameOverHandler gameOverHandler;
  
     void Awake()
     {   
@@ -59,13 +58,10 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
     public void OnUnityAdsShowComplete(string adUnitId, UnityAdsShowCompletionState showCompletionState)
     {
         if (adUnitId.Equals(_adUnitId) && showCompletionState.Equals(UnityAdsShowCompletionState.COMPLETED))
-        {   
+        {
             Debug.Log("Unity Ads Rewarded Ad Completed");
             // Grant a reward.
-            
-            Debug.Log("You've gained 5 fuel");
-            mainMenu.EnergyReward();
-
+            gameOverHandler.ContinueGame();
         }
     }
  

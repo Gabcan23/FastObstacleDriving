@@ -8,6 +8,7 @@ public class Car : MonoBehaviour
     [SerializeField] private float speed = 10f;
     [SerializeField] private float speedGainPerSecond = 0.2f;
     [SerializeField] private float turnSpeed = 200f;
+    [SerializeField] private GameOverHandler gameOverHandler;
 
     private int steerValue;
 
@@ -25,8 +26,7 @@ public class Car : MonoBehaviour
     {
         if(other.CompareTag("Obstacle"))
         {
-
-            SceneManager.LoadScene(0);
+            gameOverHandler.EndGame();
         }
 
     }

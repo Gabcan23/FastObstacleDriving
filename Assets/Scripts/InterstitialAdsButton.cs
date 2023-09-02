@@ -29,7 +29,7 @@ public class InterstitialAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnit
     // Show the loaded content in the Ad Unit:
     public void ShowAd()
     {
-        if(showAD==3){
+        if(showAD==2){
             showAD=0;
             // Note that if the ad content wasn't previously loaded, this method will fail
             Debug.Log("Showing Ad: " + _adUnitId);

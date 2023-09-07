@@ -10,9 +10,18 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
     string _adUnitId = null; // This will remain null for unsupported platforms
 
     [SerializeField] MainMenu mainMenu;
+
+    public static RewardedAdsButton instance;
  
     void Awake()
     {   
+         if (instance == null)
+        {
+            instance = this;
+        }
+        else {
+            Destroy(this);
+        }
         // Get the Ad Unit ID for the current platform:
 #if UNITY_IOS
         _adUnitId = _iOSAdUnitId;
@@ -87,6 +96,7 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
  
     void OnDestroy()
     {
+        instance = null;
         // Clean up the button listeners:
         _showAdButton.onClick.RemoveAllListeners();
     }

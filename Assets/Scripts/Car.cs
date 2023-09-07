@@ -10,7 +10,17 @@ public class Car : MonoBehaviour
     [SerializeField] private float turnSpeed = 200f;
     [SerializeField] private GameOverHandler gameOverHandler;
 
+    [SerializeField] private GameObject defaultCar;
+    [SerializeField] private GameObject secondCar;
+
     private int steerValue;
+
+    void Start(){
+        if(PlayerPrefs.GetInt(Store.secondCarUnlockedKey, 0) == 1){
+            defaultCar.gameObject.SetActive(false);
+            secondCar.gameObject.SetActive(true);
+        }
+    }
 
     void Update()
     {

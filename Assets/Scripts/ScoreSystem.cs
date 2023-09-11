@@ -42,9 +42,17 @@ public class ScoreSystem : MonoBehaviour
 
         if(score > currentHighScore)
         {
+            if(Leaderboards.connectedToGooglePlay){
+                Social.ReportScore(Mathf.FloorToInt(score),GPGSIds.leaderboard_drivepoints, LeaderboardUpdate);
+            }
 
             PlayerPrefs.SetInt(HighScoreKey, Mathf.FloorToInt(score));
         }
 
+    }
+
+    private void LeaderboardUpdate(bool success){
+        if(success){Debug.Log("Updates Leaderboard");}
+        else{Debug.Log("Failed to update leaderboard");}
     }
 }
